@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Muhammad Rafli - Portfolio & Resume</title>
+  <meta content="Portfolio and Resume of Muhammad Rafli - IT Support, Graphic Designer, and Web Developer." name="description">
+  <meta content="Muhammad Rafli, IT Support, Web Developer, Graphic Designer, Portfolio, Surakarta" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom Styles & Animations -->
+  <style>
+    /* Language Switcher Button Styling */
+    .language-switcher {
+      position: fixed;
+      top: 20px;
+      right: 25px;
+      z-index: 9999;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 6px 12px;
+      border-radius: 30px;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+    }
+    .language-switcher:hover {
+      box-shadow: 0px 6px 25px rgba(5, 99, 187, 0.2);
+    }
+    .language-switcher button {
+      border: none;
+      background: transparent;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 20px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      color: #45505b;
+    }
+    .language-switcher button.active {
+      background: #0563bb;
+      color: #fff;
+      transform: scale(1.05);
+    }
+    .language-switcher button:hover:not(.active) {
+      color: #0563bb;
+      background: rgba(5, 99, 187, 0.08);
+    }
+
+    /* Skills Badges Styling & Hover Animation */
+    .skills-badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .skill-badge {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      padding: 12px 22px;
+      border-radius: 50px;
+      font-weight: 500;
+      color: #45505b;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.02);
+      cursor: default;
+    }
+    .skill-badge:hover {
+      background: #0563bb;
+      color: #fff;
+      border-color: #0563bb;
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0px 8px 20px rgba(5, 99, 187, 0.25);
+    }
+    .skill-badge i {
+      font-size: 18px;
+      color: #0563bb;
+      transition: all 0.4s ease;
+    }
+    .skill-badge:hover i {
+      color: #fff;
+      transform: rotate(10deg);
+    }
+
+    /* Smooth Fade Transition when Switching Language */
+    [data-i18n] {
+      transition: opacity 0.2s ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <!-- Language Switcher Button -->
+  <div class="language-switcher">
+    <button id="btn-id" class="active" onclick="switchLanguage('id')">ID</button>
+    <span style="color: #ccc;">|</span>
+    <button id="btn-en" onclick="switchLanguage('en')">EN</button>
+  </div>
+
+  <header id="header" class="header d-flex flex-column justify-content-center">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span data-i18n="nav_home">Home</span></a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i><span data-i18n="nav_about">About</span></a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span data-i18n="nav_resume">Resume</span></a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span data-i18n="nav_portfolio">Portfolio</span></a></li>
+        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span data-i18n="nav_services">Services</span></a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span data-i18n="nav_contact">Contact</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+      <img src="assets/img/hero-bg.png" alt="Hero Background">
+      <div class="container" data-aos="zoom-out">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <h2>Muhammad Rafli</h2>
+            <p>I'm <span class="typed" data-typed-items="IT Support, Web Developer, Mobile Developer, Graphic Designer">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/muhammad-rafli-aa124b176/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+              <a href="https://github.com/muhraflisolo" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+              <a href="https://www.instagram.com/muhraflisolo/" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.facebook.com/muhraflisolo/" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 data-i18n="nav_about">About</h2>
+        <p data-i18n="about_desc">I am a young individual with a deep passion for the realm of creativity, always eager to explore and create new things. My ability to learn quickly enables me to absorb new knowledge effortlessly, thus I am always prepared to tackle new challenges and broaden my horizons.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="assets/img/profile-img.png" class="img-fluid rounded" alt="Profile Image">
+          </div>
+          <div class="col-lg-8 content">
+            <h2 data-i18n="about_subtitle">Graphic Designer & Developer</h2>
+            <p class="fst-italic py-3" data-i18n="about_quote">
+              I am a graphic designer and mobile web developer, dedicated to creating visually engaging and user-friendly digital experiences.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="lbl_birthday">Birthday:</strong> <span>03 July 2002</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="lbl_city">City:</strong> <span>Surakarta, Indonesia</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="lbl_age">Age:</strong> <span>24</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="lbl_degree">Degree:</strong> <span data-i18n="val_degree">Bachelor Degree</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>muhraflioke@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="lbl_freelance">Freelance:</strong> <span data-i18n="val_available">Available</span></li>
+                </ul>
+              </div>
+            </div>
+            <p class="py-3" data-i18n="about_footer">
+              With a keen eye for design and a passion for technology, I strive to bring creative visions to life through innovative web and mobile solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-emoji-smile"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="270" data-purecounter-duration="1" class="purecounter"></span>
+              <p data-i18n="stat_clients">Happy Clients</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-images"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="270" data-purecounter-duration="1" class="purecounter"></span>
+              <p data-i18n="stat_design">Graphic Design</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-link-45deg"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+              <p data-i18n="stat_website">Website</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-file-earmark-text"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="22" data-purecounter-duration="1" class="purecounter"></span>
+              <p data-i18n="stat_apps">Mobile Apps</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Stats Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+        <p data-i18n="skills_desc">As a skilled graphic designer and mobile web developer, I possess a diverse set of technical and creative skills that enable me to deliver high-quality digital solutions.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="skills-badge-container">
+          <div class="skill-badge"><i class="bi bi-brush"></i> <span>CorelDRAW & Graphic Design</span></div>
+          <div class="skill-badge"><i class="bi bi-code-slash"></i> <span>Web Development (HTML/CSS/JS)</span></div>
+          <div class="skill-badge"><i class="bi bi-phone"></i> <span>Mobile Developer (Android / Kotlin / Java)</span></div>
+          <div class="skill-badge"><i class="bi bi-tools"></i> <span data-i18n="skill_troubleshooting">Computer Troubleshooting</span></div>
+          <div class="skill-badge"><i class="bi bi-hdd-network"></i> <span>Networking</span></div>
+          <div class="skill-badge"><i class="bi bi-camera"></i> <span data-i18n="skill_photo">Photography & Videography</span></div>
+          <div class="skill-badge"><i class="bi bi-people"></i> <span data-i18n="skill_team">Team Management</span></div>
+          <div class="skill-badge"><i class="bi bi-file-earmark-text"></i> <span data-i18n="skill_office">Office Application</span></div>
+          <div class="skill-badge"><i class="bi bi-chat-dots"></i> <span data-i18n="skill_comm">Communication</span></div>
+        </div>
+      </div>
+    </section><!-- /Skills Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 data-i18n="nav_resume">Resume</h2>
+        <p data-i18n="resume_desc">I am Muhammad Rafli, a graphic designer and mobile web developer with a Bachelor's degree in Computer Science completed in 3.5 years, and 4 years of professional experience in creating innovative and user-friendly digital solutions.</p>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <!-- Left Column: Education & Certification -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title" data-i18n="title_education">Education</h3>
+
+            <div class="resume-item pb-0">
+              <h4>SMK AL-ISLAM SURAKARTA</h4>
+              <h5>2018 - 2020</h5>
+              <p><em data-i18n="edu_smk_major">Computer and Network Engineering</em></p>
+              <p><em data-i18n="edu_smk_desc">Graduate of SMK Al Islam, specializing in computer and network troubleshooting. Developed strong technical skills and gained practical experience in diagnosing and resolving hardware and network issues.</em></p>
+            </div>
+
+            <div class="resume-item pb-0">
+              <h4>Universitas Tiga Serangkai (eks. STMIK SINAR NUSANTARA)</h4>
+              <h5>2020 - 2024</h5>
+              <p><em data-i18n="edu_univ_major">Informatics</em></p>
+              <p><em data-i18n="edu_univ_desc">Graduate of Informatics, successfully completed degree in 3.5 years. Developed strong technical skills in web & Android application development, data analysis, and honed public speaking abilities.</em></p>
+            </div>
+
+            <h3 class="resume-title" data-i18n="title_certification">Certification</h3>
+
+            <div class="resume-item">
+              <h4 data-i18n="cert_1_title">Android Kotlin Program Development (Bangkit Academy)</h4>
+              <h5>Dicoding, GoTo, & Traveloka</h5>
+              <p><em data-i18n="cert_1_sub">Mobile Development Competency Program</em></p>
+              <ul>
+                <li data-i18n="cert_1_li1">Completed an intensive Android development training program using Kotlin, supported by Google, GoTo, and Traveloka through Bangkit Academy.</li>
+                <li data-i18n="cert_1_li2">Studied modern Android architecture, REST API integration, coroutines, and best practices in mobile app development.</li>
+                <li data-i18n="cert_1_li3">Designed and built functional, interactive, and user-friendly mobile applications.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4 data-i18n="cert_2_title">Android Java Program Development</h4>
+              <h5>PT Hacktivate Teknologi Indonesia</h5>
+              <p><em data-i18n="cert_2_sub">Mobile Programming Training</em></p>
+              <ul>
+                <li data-i18n="cert_2_li1">Completed intensive Android app development training program using Java with Hacktiv8.</li>
+                <li data-i18n="cert_2_li2">Mastered Object-Oriented Programming (OOP) logic, dynamic UI layout management, and Android system component integration.</li>
+                <li data-i18n="cert_2_li3">Applied clean code principles and technical problem-solving for mobile solutions.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4 data-i18n="cert_3_title">Best Participant VSGA - Intermediate Computer Operator</h4>
+              <h5>Kominfo Yogyakarta</h5>
+              <p><em data-i18n="cert_3_sub">Competency Training & Certification</em></p>
+              <ul>
+                <li data-i18n="cert_3_li1">Achieved Best Participant award in the Vocational School Graduate Academy (VSGA) program organized by BPSDMP Kominfo Yogyakarta.</li>
+                <li data-i18n="cert_3_li2">Mastered advanced competencies in office application operations, data management, and administration automation.</li>
+                <li data-i18n="cert_3_li3">Validated professional computer technical skills through rigorous competency assessments.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right Column: Professional Experience -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title" data-i18n="title_experience">Professional Experience</h3>
+            
+            <div class="resume-item">
+              <h4>Bank Rakyat Indonesia (BRI)</h4>
+              <h5>2024 – <span data-i18n="lbl_present">Present</span></h5>
+              <p><em data-i18n="exp_bri_role">IT & Data Archive Officer</em></p>
+              <ul>
+                <li data-i18n="exp_bri_li1">Handled operational IT infrastructure maintenance, including hardware and software troubleshooting.</li>
+                <li data-i18n="exp_bri_li2">Managed, organized, and digitized critical company data archives to ensure data security and easy accessibility.</li>
+                <li data-i18n="exp_bri_li3">Provided daily IT support to ensure smooth operational workflow and network system coordination.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4 data-i18n="exp_web_title">Freelancer Web Project</h4>
+              <h5>2024 - 2025</h5>
+              <p><em data-i18n="lbl_freelance_desc">Independent / Freelance</em></p>
+              <ul>
+                <li data-i18n="exp_web_li1">Led 7+ web development projects from concept to launch, coordinating cross-functional teams (developers, designers, Quality Control).</li>
+                <li data-i18n="exp_web_li2">Created project timelines to ensure tasks were completed on schedule.</li>
+                <li data-i18n="exp_web_li3">Performed daily monitoring to identify delay risks and formulated immediate troubleshooting solutions.</li>
+                <li data-i18n="exp_web_li4">Optimized team communication through weekly stand-up meetings to prevent miscommunication.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4 data-i18n="exp_it_title">Freelancer IT Support</h4>
+              <h5>2020 – <span data-i18n="lbl_present">Present</span></h5>
+              <p><em data-i18n="lbl_freelance_desc">Independent / Freelance</em></p>
+              <ul>
+                <li data-i18n="exp_it_li1">Provided remote and onsite support for software troubleshooting on computers.</li>
+                <li data-i18n="exp_it_li2">Performed computer hardware troubleshooting and diagnostics.</li>
+                <li data-i18n="exp_it_li3">Assembled computers and installed operating systems (Windows/Linux) along with drivers and software.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>PT Solopos Media Group</h4>
+              <h5>2024 - 2025</h5>
+              <p><em data-i18n="exp_solopos_role">Printing Machine Operator & Digital Marketing</em></p>
+              <ul>
+                <li data-i18n="exp_solopos_li1">Managed local office networks and coordinated with teams for printing production processes.</li>
+                <li data-i18n="exp_solopos_li2">Built prospective customer databases (tools: Excel, SQL) to support sales team marketing strategies.</li>
+                <li data-i18n="exp_solopos_li3">Assisted in digital marketing campaigns to enhance brand visibility and engagement.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>PT TELKOM AKSES (PRAKERIN)</h4>
+              <h5>2018 - 2019</h5>
+              <p><em data-i18n="exp_telkom_role">Network Technician Intern</em></p>
+              <ul>
+                <li data-i18n="exp_telkom_li1">Assisted in network installation, maintenance, and fiber optic cable troubleshooting.</li>
+                <li data-i18n="exp_telkom_li2">Ensured stable internet connectivity and network performance for clients.</li>
+                <li data-i18n="exp_telkom_li3">Collaborated with senior technicians to resolve field technical challenges efficiently.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Resume Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 data-i18n="nav_portfolio">Portfolio</h2>
+        <p data-i18n="portfolio_desc">Here is my complete portfolio collection covering Android Applications, Graphic Design, Photography & Videography, and Websites.</p>
+      </div>
+
+      <div class="container">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/portfolio/v1.png" class="img-fluid" alt="Wallpaper Design">
+              <div class="portfolio-info">
+                <p>Wallpaper Design</p>
+                <a href="assets/img/portfolio/v1.png" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/portfolio/ui.jpg" class="img-fluid" alt="UI UX Design">
+              <div class="portfolio-info">
+                <p>UI/UX Design Management Order PT Solo Grafika Utama</p>
+                <a href="assets/img/portfolio/ui.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/portfolio/cardname.jpeg" class="img-fluid" alt="Card Name Design">
+              <div class="portfolio-info">
+                <p>Card Name Design</p>
+                <a href="assets/img/portfolio/cardname.jpeg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/portfolio/event.jpg" class="img-fluid" alt="Event Design">
+              <div class="portfolio-info">
+                <p>Game Spin & Karaoke Event 76</p>
+                <a href="assets/img/portfolio/event.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/portfolio/cucut.png" class="img-fluid" alt="Logo Design">
+              <div class="portfolio-info">
+                <p>Logo Rhisoprionodon Acutus</p>
+                <a href="assets/img/portfolio/cucut.png" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/portfolio/redbus.png" class="img-fluid" alt="Redbus App">
+              <div class="portfolio-info">
+                <p>Redbus Order Ticket App</p>
+                <a href="assets/img/portfolio/redbus.png" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/portfolio/nz.png" class="img-fluid" alt="Printing Web App">
+              <div class="portfolio-info">
+                <p>Printing Order Website App</p>
+                <a href="assets/img/portfolio/nz.png" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/portfolio/storyboard bpsdmp.png" class="img-fluid" alt="Storyboard">
+              <div class="portfolio-info">
+                <p>Video Storyboard</p>
+                <a href="assets/img/portfolio/storyboard bpsdmp.png" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/portfolio/popda.png" class="img-fluid" alt="Taekwondo Selection Web">
+              <div class="portfolio-info">
+                <p>Taekwondo Selection Website</p>
+                <a href="assets/img/portfolio/popda.png" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/portfolio/karvex.png" class="img-fluid" alt="Karvex Logo">
+              <div class="portfolio-info">
+                <p>Karvex Brand Logo</p>
+                <a href="assets/img/portfolio/karvex.png" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="assets/img/portfolio/stockminder.png" class="img-fluid" alt="Stockminder App">
+              <div class="portfolio-info">
+                <p>Stockminder Management Order App</p>
+                <a href="assets/img/portfolio/stockminder.png" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section><!-- /Portfolio Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 data-i18n="title_services">Services</h2>
+        <p data-i18n="services_desc">Here are professional services that I offer based on my expertise in technology and creative fields.</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item item-cyan position-relative">
+              <div class="icon"><i class="bi bi-palette"></i></div>
+              <a href="#contact" class="stretched-link"><h3>GRAPHIC DESIGN</h3></a>
+              <p data-i18n="srv_design_desc">Leveraging industry-standard tools such as CorelDraw and the Adobe Creative Suite, I create polished, high-quality visual assets tailored to diverse creative and commercial requirements.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item item-orange position-relative">
+              <div class="icon"><i class="bi bi-display"></i></div>
+              <a href="#contact" class="stretched-link"><h3>UI/UX DESIGN</h3></a>
+              <p data-i18n="srv_uiux_desc">Specializing in user interface (UI) and user experience (UX) design using Figma, I craft intuitive, user-centric digital experiences for both web and mobile platforms.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item item-teal position-relative">
+              <div class="icon"><i class="bi bi-tools"></i></div>
+              <a href="#contact" class="stretched-link"><h3>IT SUPPORT</h3></a>
+              <p data-i18n="srv_it_desc">Drawing on hands-on professional experience as a computer technician, I possess advanced diagnostic and troubleshooting skills to ensure seamless hardware and software operations.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item item-red position-relative">
+              <div class="icon"><i class="bi bi-printer"></i></div>
+              <a href="#contact" class="stretched-link"><h3>DIGITAL PRINTING</h3></a>
+              <p data-i18n="srv_print_desc">Expert in digital printing operations and maintenance, utilizing advanced printing technology to deliver precise, efficient, and premium-quality output for every production cycle.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item item-indigo position-relative">
+              <div class="icon"><i class="bi bi-kanban"></i></div>
+              <a href="#contact" class="stretched-link"><h3 data-i18n="srv_mgmt_title">WEBSITE PROJECT MANAGEMENT</h3></a>
+              <p data-i18n="srv_mgmt_desc">Experienced in overseeing end-to-end web development life cycles—from initial concept and UI/UX planning to deployment and maintenance. I coordinate cross-functional tasks, manage timelines, and ensure alignment between design, technical execution, and client objectives to deliver high-performing digital projects.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item item-pink position-relative">
+              <div class="icon"><i class="bi bi-file-earmark-spreadsheet"></i></div>
+              <a href="#contact" class="stretched-link"><h3 data-i18n="srv_admin_title">MICROSOFT OFFICE & ADMINISTRATION</h3></a>
+              <p data-i18n="srv_admin_desc">Proficient in office productivity applications, backed by official national certification (BNSP) to validate my competencies in administrative and office automation tools.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Services Section -->
+
+   <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 data-i18n="title_contact">Contact</h2>
+        <p data-i18n="contact_desc">I'm always excited to connect and collaborate. If you have any questions or just want to chat, feel free to reach out.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+
+          <!-- Address Item -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="info-box-card">
+              <div class="icon-box">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div>
+                <h3 data-i18n="lbl_address">Address</h3>
+                <p>Pasar Kliwon, Surakarta, Central Java</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message / Instagram Item -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <a href="https://www.instagram.com/muhraflisolo/" target="_blank" rel="noopener" class="info-box-link">
+              <div class="info-box-card">
+                <div class="icon-box">
+                  <i class="bi bi-instagram"></i>
+                </div>
+                <div>
+                  <h3 data-i18n="lbl_message">Message Us</h3>
+                  <p>@muhraflisolo</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Email Item -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <a href="mailto:muhraflioke@gmail.com" class="info-box-link">
+              <div class="info-box-card">
+                <div class="icon-box">
+                  <i class="bi bi-envelope"></i>
+                </div>
+                <div>
+                  <h3 data-i18n="lbl_email">Email Us</h3>
+                  <p>muhraflioke@gmail.com</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <h3 class="sitename">Muhammad Rafli</h3>
+      <p data-i18n="footer_desc">Combining a passion for creative design with advanced skills in mobile web development to deliver innovative and user-friendly digital solutions. Dedicated to continuous learning and excellence in the tech industry.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://www.linkedin.com/in/muhammad-rafli-aa124b176/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/muhraflisolo" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+        <a href="https://www.instagram.com/muhraflisolo/" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/muhraflisolo/" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main Template JS -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- External Language Switcher JS Script -->
+  <script src="assets/js/language-switcher.js"></script>
+
+</body>
+
+</html>
